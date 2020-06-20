@@ -15,7 +15,7 @@
       </ion-item>
     </div>
 
-    <ion-button color="primary" class="enter" (click)="enter()">
+    <ion-button color="primary" class="enter" (click)="navigate()" [disabled]="name? false : true">
       Acessar
     </ion-button>
 

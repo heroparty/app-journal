@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { timer } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-loader',
@@ -11,16 +12,18 @@ export class LoaderPage implements OnInit {
 
   constructor(
     private router: Router,
+    private user: UserService,
   ) { }
 
   ngOnInit() {
-    timer(3000).subscribe(() => {
-      const user = localStorage.getItem('user');
-      if (user) {
-      } else {
-        this.router.navigateByUrl('/login');
-      }
-    });
+    timer(3000).subscribe(() => this.check());
+  }
+
+  check() {
+    if (this.user.exists()) {
+    } else {
+      this.router.navigateByUrl('/login');
+    }
   }
 
 }

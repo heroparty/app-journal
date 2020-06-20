@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPage implements OnInit {
 
+  user: any;
+
+  articles: any;
+
   constructor() { }
 
   ngOnInit() {
+
+
+
   }
 
 }
