@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Barriecito&display=swap');
+
+ion-content {
+    padding : 0;
+    margin  : 0;
+    width   : 100vw;
+    height  : 100vh;
+    overflow: hidden;
+    position: relative;
+
+    .content {
+        position: fixed;
+        width   : 100vw;
+        height  : 100vh;
+
+        .bg {
+            overflow: hidden;
+            position: absolute;
+            height  : calc(100vh + 470px);
+            width   : 100vw;
+            z-index : 4;
+            --dark-color  : #0a79c3;
+            --medium-color: #0B88DB;
+            --light-color : #0d97f3;
+            background-image: repeating-linear-gradient(135deg,
+                    var(--medium-color),
+                    var(--medium-color) 100px,
+                    var(--light-color) 100px,
+                    var(--light-color) 105px,
+                    var(--medium-color) 105px,
+                    var(--medium-color) 130px,
+                    var(--light-color) 130px,
+                    var(--light-color) 260px,
+                    var(--dark-color) 260px,
+                    var(--dark-color) 265px,
+                    var(--light-color) 265px,
+                    var(--light-color) 270px,
+                    var(--dark-color) 270px,
+                    var(--dark-color) 330px);
+            animation: run 3s linear infinite;
+        }
+    }
+
+    .txt {
+        user-select    : none;
+        position       : absolute;
+        width          : 100vw;
+        height         : 100vh;
+        top            : 0;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        flex-direction : column;
+        color          : white;
+        z-index        : 4;
+
+        img {
+            width : 45vw;
+            height: auto;
+        }
+
+        span{
+            font-size: 35px;
+            margin: 10px 0;
+        }
+    }
+}
+
+@keyframes run {
+    to {
+        margin-top: -470px;
+    }
+}
