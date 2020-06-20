@@ -14,13 +14,13 @@ export class LoaderPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    // timer(3000).subscribe(() => {
-    //   const user = localStorage.getItem('user');
-    //   if (user) {
-    //   } else {
-    //     this.router.navigateByUrl('/login');
-    //   }
-    // });
+    timer(3000).subscribe(() => {
+      const user = localStorage.getItem('user');
+      if (user) {
+      } else {
+        this.router.navigateByUrl('/login');
+      }
+    });
   }
 
 }

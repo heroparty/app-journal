@@ -1,9 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+
+  <div class="content">
+
+    <div class="header">
+      <img src="assets/svg/text.svg">
+    </div>
+
+    <div class="input">
+      <ion-item lines="none">
+        <ion-label>
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-label>
+        <ion-input placeholder="Usuário" (ionInput)="assign($event)"></ion-input>
+      </ion-item>
+    </div>
+
+    <ion-button color="primary" class="enter" (click)="enter()">
+      Acessar
+    </ion-button>
+
+  </div>
 
 </ion-content>
