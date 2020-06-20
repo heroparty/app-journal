@@ -4,28 +4,24 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'loader',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
     path: 'loader',
-    loadChildren: () => import('./pages/loader/loader.module').then( m => m.LoaderPageModule)
+    loadChildren: () => import('./pages/loader/loader.module').then(m => m.LoaderPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'list',
-    loadChildren: () => import('./pages/list/list.module').then( m => m.ListPageModule)
+    loadChildren: () => import('./pages/list/list.module').then(m => m.ListPageModule)
   },
   {
     path: 'view',
-    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
+    loadChildren: () => import('./pages/view/view.module').then(m => m.ViewPageModule)
   }
 ];
 
@@ -35,4 +31,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
