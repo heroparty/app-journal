@@ -21,6 +21,7 @@ export class LoaderPage implements OnInit {
 
   check() {
     if (this.user.exists()) {
+      this.router.navigateByUrl('/list');
     } else {
       this.router.navigateByUrl('/login');
     }
