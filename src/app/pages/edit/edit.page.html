@@ -1,9 +1,55 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>edit</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-fab-button class="fab-small" (click)="cancel()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-buttons>
+    <ion-title slot="start"> Editar anotação </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="content">
 
+    <div class="when">
+      <div class="row">
+        <div class="circle">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+        <span class="label"> Data ultima edição: {{getDate(article.timestamp)}} </span>
+      </div>
+      <div class="row">
+        <div class="circle">
+          <ion-icon name="time-outline"></ion-icon>
+        </div>
+        <span class="label"> Hora ultima edição: {{getHour(article.timestamp)}} </span>
+      </div>
+    </div>
+
+    <div class="input">
+      <ion-item lines="none">
+        <ion-input placeholder="Título" (ionInput)="edition.title = $event.target.value" [value]="edition.title">
+        </ion-input>
+      </ion-item>
+    </div>
+
+    <div class="input">
+      <ion-item class="textarea" lines="none">
+        <ion-textarea rows="10" cols="20" placeholder="Minha anotação..."
+          (ionInput)="edition.description = $event.target.value" [value]="edition.description">
+        </ion-textarea>
+      </ion-item>
+    </div>
+
+    <div class="buttons">
+      <ion-button color="danger" class="enter" (click)="cancel()">
+        Cancelar
+      </ion-button>
+      <ion-button color="primary" class="enter" (click)="save()" [disabled]="!edition.title || !edition.description">
+        Salvar
+      </ion-button>
+    </div>
+
+  </div>
 </ion-content>

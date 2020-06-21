@@ -6,6 +6,7 @@ import { ViewModel } from 'src/app/models/view.model';
 import { DateService } from 'src/app/services/date.service';
 import { ViewDialogPage } from 'src/app/shared/dialogs/view-dialog/view-dialog.page';
 import { ModalController } from '@ionic/angular';
+import { ArticleModel } from 'src/app/models/article.model';
 
 @Component({
   selector: 'app-list',
@@ -40,12 +41,10 @@ export class ListPage {
     this.router.navigateByUrl('/create');
   }
 
-  async open(index: number) {
-    const article = this.articles.all[index];
-    const user = this.user.selected;
+  async open(article: ArticleModel) {
     const modal = await this.modal.create({
       component: ViewDialogPage,
-      componentProps: { article, user },
+      componentProps: { article },
       animated: true,
     });
     await modal.present();

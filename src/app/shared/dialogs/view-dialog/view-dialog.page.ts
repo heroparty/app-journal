@@ -16,8 +16,6 @@ export class ViewDialogPage {
 
   @Input() article: ArticleModel;
 
-  @Input() user: UserModel;
-
   constructor(
     private router: Router,
     private modal: ModalController,

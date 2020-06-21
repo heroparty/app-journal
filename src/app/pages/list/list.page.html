@@ -13,9 +13,9 @@
 
   <div class="content">
 
-    <ng-template ngFor let-article [ngForOf]="view.articles.reverse()" let-i="index">
+    <ng-template ngFor let-article [ngForOf]="view.articles.reverse()">
 
-      <div class="article ion-activatable ripple-parent" (click)="open(i)">
+      <div class="article ion-activatable ripple-parent" (click)="open(article)">
         <ion-ripple-effect></ion-ripple-effect>
         <div class="title"> {{article.title}} </div>
         <div class="description"> {{article.description}} </div>

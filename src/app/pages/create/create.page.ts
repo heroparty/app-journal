@@ -44,7 +44,7 @@ export class CreatePage {
     const title = this.title;
     const description = this.description;
     const timestamp = this.date.convertDateToTime(new Date());
-    this.article.create({ title, description, timestamp });
+    this.article.create(title, description);
     this.router.navigateByUrl('/list');
   }
 

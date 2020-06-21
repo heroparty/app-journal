@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { ArticleModel } from '../models/article.model';
+import { DateService } from './date.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
 
-  constructor() { }
+  constructor(
+    private date: DateService,
+  ) { }
 
   public check(): void {
     const articles = localStorage.getItem('articles');
@@ -19,10 +22,32 @@ export class ArticleService {
     }
   }
 
-  public create(article: ArticleModel): void {
-    const id = this.uniqueId();
+  public create(title: string, description: string): void {
+    this.update(this.uniqueId(), title, description);
+  }
+
+  public find(id: number): ArticleModel | null {
     const articles = this.all;
-    articles.push({ ...article, id });
+    const ids = articles.map(at => at.id);
+    const index = ids.indexOf(id);
+    const exists = index !== -1;
+    if (exists) {
+      return articles[index];
+    } else {
+      return null;
+    }
+  }
+
+  public update(id: number, title: string, description: string): void {
+    const timestamp = this.date.convertDateToTime(new Date());
+    const articles = this.all;
+    const ids = articles.map(at => at.id);
+    const index = ids.indexOf(id);
+    const exists = index !== -1;
+    if (exists) {
+      articles.splice(index, 1);
+    }
+    articles.push({ title, description, id, timestamp });
     this.save(articles);
   }
 
