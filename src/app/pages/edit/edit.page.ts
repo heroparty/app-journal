@@ -42,7 +42,7 @@ export class EditPage {
     if (hasTitleAlterations || hasDescriptionAlterations) {
       const alert = await this.alert.create({
         header: 'Cancelar?',
-        message: 'Você deseja sair no meio da edição? <strong> Os não salvos serão perdidos.</strong>',
+        message: 'Você deseja sair no meio da edição? <strong> Os dados não salvos serão perdidos.</strong>',
         buttons: [
           { text: 'Cancelar', handler: () => { } },
           { text: 'Sair', handler: () => { this.router.navigateByUrl('/list'); } }

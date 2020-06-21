@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "app-journal",
+  "appId": "com.unisul.journaling-my-journey",
+  "appName": "Journaling my journey",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
@@ -9,5 +9,14 @@
       "launchShowDuration": 0
     }
   },
-  "cordova": {}
+  "cordova": {},
+  "android": {
+    "overrideUserAgent": "jmj-custom-agent",
+    "appendUserAgent": "jmj-custom-append",
+    "backgroundColor": "#0B88DB",
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true,
+    "hideLogs": false
+  }
 }
