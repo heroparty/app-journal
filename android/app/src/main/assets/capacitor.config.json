@@ -1,0 +1,22 @@
+{
+  "appId": "com.unisul.journaling.my.journey",
+  "appName": "Journaling my journey",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "android": {
+    "overrideUserAgent": "jmjcustomagent",
+    "appendUserAgent": "jmjcustomappend",
+    "backgroundColor": "#0B88DB",
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true,
+    "hideLogs": false
+  }
+}
