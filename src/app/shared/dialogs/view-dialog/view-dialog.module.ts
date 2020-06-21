@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ViewPageRoutingModule } from './view-routing.module';
+import { ViewDialogPageRoutingModule } from './view-dialog-routing.module';
 
-import { ViewPage } from './view.page';
+import { ViewDialogPage } from './view-dialog.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ViewPageRoutingModule
+    ViewDialogPageRoutingModule
   ],
-  declarations: [ViewPage]
+  declarations: [ViewDialogPage]
 })
-export class ViewPageModule {}
+export class ViewDialogPageModule {}

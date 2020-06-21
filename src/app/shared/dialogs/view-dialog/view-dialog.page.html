@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-fab-button class="fab-small" (click)="dismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-buttons>
+    <ion-title slot="start"> Ver Anotação </ion-title>
+    <ion-buttons slot="end">
+      <ion-fab-button class="fab-small" (click)="edit()">
+        <ion-icon name="pencil-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button class="fab-small" (click)="delete()">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+
+    <div class="when">
+      <div class="row">
+        <div class="circle">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+        <span class="label"> Data ultima edição: {{getDate(article.timestamp)}}</span>
+      </div>
+      <div class="row">
+        <div class="circle">
+          <ion-icon name="time-outline"></ion-icon>
+        </div>
+        <span class="label"> Hora ultima edição: {{getHour(article.timestamp)}}</span>
+      </div>
+    </div>
+
+    <div class="input">
+      <ion-item lines="none">
+        <ion-label position="floating" color="primary"> Título </ion-label>
+        <ion-input readonly [value]="article.title"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="input">
+      <ion-item class="textarea" lines="none">
+        <ion-label position="floating" color="primary"> Descrição </ion-label>
+        <ion-textarea readonly rows="10" cols="20" [value]="article.description">
+        </ion-textarea>
+      </ion-item>
+    </div>
+
+  </div>
+</ion-content>

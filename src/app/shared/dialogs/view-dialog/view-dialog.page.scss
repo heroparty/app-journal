@@ -1,0 +1,58 @@
+.content {
+    display       : flex;
+    flex-direction: column;
+    padding       : 20px 10px 0 10px;
+
+    .when {
+        display       : flex;
+        flex-direction: column;
+
+        .row {
+            display      : flex;
+            align-items  : center;
+            margin-bottom: 4px;
+
+            .circle {
+                background-color: #0B88DB;
+                color           : white;
+                border-radius   : 50%;
+                width           : 30px;
+                height          : 30px;
+                margin-right    : 5px;
+                display         : flex;
+                justify-content : center;
+                align-items     : center;
+            }
+
+            .label {
+                color: #0B88DB;
+            }
+
+        }
+
+    }
+
+    .input {
+        box-shadow   : 0 10px 55px -15px #bbbbbb;
+        margin       : 10px 0;
+        overflow     : hidden;
+        border-radius: 15px;
+
+        ion-item {
+            --highlight-color-valid  : transparent;
+            --highlight-color-invalid: transparent;
+            --highlight-color-focused: transparent;
+        }
+    }
+
+    .buttons {
+        width          : 100%;
+        display        : flex;
+        justify-content: flex-end;
+        align-items    : center;
+
+        &>*:not(:last-child) {
+            margin-right: 5px;
+        }
+    }
+}

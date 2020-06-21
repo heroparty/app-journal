@@ -4,6 +4,8 @@ import { ArticleService } from 'src/app/services/article.service';
 import { UserService } from 'src/app/services/user.service';
 import { ViewModel } from 'src/app/models/view.model';
 import { DateService } from 'src/app/services/date.service';
+import { ViewDialogPage } from 'src/app/shared/dialogs/view-dialog/view-dialog.page';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-list',
@@ -19,6 +21,7 @@ export class ListPage {
     private user: UserService,
     private articles: ArticleService,
     private date: DateService,
+    private modal: ModalController,
   ) { }
 
   ionViewDidEnter() {
@@ -35,6 +38,19 @@ export class ListPage {
 
   create() {
     this.router.navigateByUrl('/create');
+  }
+
+  async open(index: number) {
+    const article = this.articles.all[index];
+    const user = this.user.selected;
+    const modal = await this.modal.create({
+      component: ViewDialogPage,
+      componentProps: { article, user },
+      animated: true,
+    });
+    await modal.present();
+    await modal.onWillDismiss();
+    this.load();
   }
 
   convertDate(timestamp: number) {

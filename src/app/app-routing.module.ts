@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/create/create.module').then(m => m.CreatePageModule)
   },
   // {
-  //   path: 'view',
-  //   loadChildren: () => import('./pages/view/view.module').then(m => m.ViewPageModule)
-  // },
-  // {
   //   path: 'edit/:id',
   //   loadChildren: () => import('./pages/view/view.module').then(m => m.ViewPageModule)
   // },

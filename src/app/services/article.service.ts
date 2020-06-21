@@ -22,6 +22,17 @@ export class ArticleService {
     this.save(articles);
   }
 
+  public delete(id: number): void {
+    const articles = this.all;
+    const ids = articles.map(at => at.id);
+    const index = ids.indexOf(id);
+    const exists = index !== -1;
+    if (exists) {
+      articles.splice(index, 1);
+      this.save(articles);
+    }
+  }
+
   public get all(): ArticleModel[] {
     return JSON.parse(localStorage.getItem('articles'));
   }
