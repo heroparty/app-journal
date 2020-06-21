@@ -1,4 +1,4 @@
-package com.unisul.journaling.my.journey;
+package com.journaling.my.journey;
 
 import android.os.Bundle;
 

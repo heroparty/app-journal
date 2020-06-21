@@ -1,12 +1,22 @@
 {
-  "appId": "com.unisul.journaling.my.journey",
+  "appId": "com.journaling.my.journey",
   "appName": "Journaling my journey",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 0
+      "launchShowDuration": 3000,
+      "launchAutoHide": true,
+      "backgroundColor": "#0B88DB",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "androidSpinnerStyle": "large",
+      "iosSpinnerStyle": "small",
+      "spinnerColor": "#ffffff",
+      "showSpinner": true,
+      "splashFullScreen": true,
+      "splashImmersive": true
     }
   },
   "cordova": {},

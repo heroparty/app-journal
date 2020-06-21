@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Journaling my journey</string>
     <string name="title_activity_main">Journaling my journey</string>
-    <string name="package_name">com.unisul.journaling.my.journey</string>
-    <string name="custom_url_scheme">com.unisul.journaling.my.journey</string>
+    <string name="package_name">com.journaling.my.journey</string>
+    <string name="custom_url_scheme">com.journaling.my.journey</string>
 </resources>
