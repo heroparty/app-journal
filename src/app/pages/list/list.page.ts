@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import { UserService } from 'src/app/services/user.service';
 import { ViewModel } from 'src/app/models/view.model';
+import { DateService } from 'src/app/services/date.service';
 
 @Component({
   selector: 'app-list',
@@ -17,6 +18,7 @@ export class ListPage {
     private router: Router,
     private user: UserService,
     private articles: ArticleService,
+    private date: DateService,
   ) { }
 
   ionViewDidEnter() {
@@ -33,6 +35,10 @@ export class ListPage {
 
   create() {
     this.router.navigateByUrl('/create');
+  }
+
+  convertDate(timestamp: number) {
+    return this.date.convertTimeToView(timestamp);
   }
 
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import { AlertController } from '@ionic/angular';
+import { DateService } from 'src/app/services/date.service';
 
 @Component({
   selector: 'app-create',
@@ -17,6 +18,7 @@ export class CreatePage {
   constructor(
     private router: Router,
     private article: ArticleService,
+    private date: DateService,
     public alert: AlertController
   ) { }
 
@@ -41,7 +43,7 @@ export class CreatePage {
   save() {
     const title = this.title;
     const description = this.description;
-    const timestamp = new Date().getTime();
+    const timestamp = this.date.convertDateToTime(new Date());
     this.article.create({ title, description, timestamp });
     this.router.navigateByUrl('/list');
   }
