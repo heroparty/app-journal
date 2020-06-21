@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController } from '@ionic/angular';
 import { ArticleService } from 'src/app/services/article.service';
 import { ArticleModel } from 'src/app/models/article.model';
 import { ViewModel } from 'src/app/models/view.model';
@@ -23,6 +23,7 @@ export class ViewDialogPage {
     private modal: ModalController,
     private articles: ArticleService,
     private date: DateService,
+    public alert: AlertController,
   ) { }
 
   edit() {
@@ -32,11 +33,24 @@ export class ViewDialogPage {
     this.dismiss();
   }
 
-  delete() {
-    const article = this.article;
-    const id = article.id;
-    this.articles.delete(id);
-    this.dismiss();
+  async delete() {
+    const alert = await this.alert.create({
+      header: 'Remover?',
+      message: 'Você deseja <strong>permanentemente</strong> excluir?',
+      buttons: [
+        { text: 'Cancelar', handler: () => { } },
+        {
+          text: 'Sair',
+          handler: () => {
+            const article = this.article;
+            const id = article.id;
+            this.articles.delete(id);
+            this.dismiss();
+          }
+        }
+      ]
+    });
+    await alert.present();
   }
 
   dismiss() {

@@ -13,7 +13,7 @@
 
   <div class="content">
 
-    <ng-template ngFor let-article [ngForOf]="view.articles" let-i="index">
+    <ng-template ngFor let-article [ngForOf]="view.articles.reverse()" let-i="index">
 
       <div class="article ion-activatable ripple-parent" (click)="open(i)">
         <ion-ripple-effect></ion-ripple-effect>

@@ -19,7 +19,7 @@ export class CreatePage {
     private router: Router,
     private article: ArticleService,
     private date: DateService,
-    public alert: AlertController
+    public alert: AlertController,
   ) { }
 
   async cancel() {
@@ -30,7 +30,7 @@ export class CreatePage {
         header: 'Sair?',
         message: 'Você deseja sair no meio da edição? <strong> Os dados atuais serão perdidos.</strong>',
         buttons: [
-          { text: 'Cancelar', handler: (blah) => { } },
+          { text: 'Cancelar', handler: () => { } },
           { text: 'Sair', handler: () => { this.router.navigateByUrl('/list'); } }
         ]
       });
