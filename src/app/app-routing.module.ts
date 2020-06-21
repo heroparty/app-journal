@@ -23,10 +23,10 @@ const routes: Routes = [
     path: 'create',
     loadChildren: () => import('./pages/create/create.module').then(m => m.CreatePageModule)
   },
-  // {
-  //   path: 'edit/:id',
-  //   loadChildren: () => import('./pages/view/view.module').then(m => m.ViewPageModule)
-  // },
+  {
+    path: 'edit/:id',
+    loadChildren: () => import('./pages/edit/edit.module').then(m => m.EditPageModule)
+  },
 ];
 
 @NgModule({
