@@ -14,20 +14,36 @@
   <div class="content">
 
     <ng-template ngFor let-article [ngForOf]="view.articles.reverse()">
-
-      <div class="article ion-activatable ripple-parent" (click)="open(article)">
-        <ion-ripple-effect></ion-ripple-effect>
-        <div class="title"> {{article.title}} </div>
-        <div class="description"> {{article.description}} </div>
-        <div class="date"> {{convertDate(article.timestamp)}} </div>
-        <div class="icons">
-          <ion-icon name="pencil-outline"></ion-icon>
-          <ion-icon name="trash-outline"></ion-icon>
+      <ng-container *ngIf="view.articles.length > 0">
+        <div class="article ion-activatable ripple-parent" (click)="open(article)">
+          <ion-ripple-effect></ion-ripple-effect>
+          <div class="title"> {{article.title}} </div>
+          <div class="description"> {{article.description}} </div>
+          <div class="date"> {{convertDate(article.timestamp)}} </div>
+          <div class="icons">
+            <ion-icon name="pencil-outline"></ion-icon>
+            <ion-icon name="trash-outline"></ion-icon>
+          </div>
+          <div class="highlight highlight-left"></div>
+          <div class="highlight highlight-right"></div>
         </div>
-        <div class="highlight highlight-left"></div>
-        <div class="highlight highlight-right"></div>
-      </div>
+      </ng-container>
     </ng-template>
+
+    <ng-container *ngIf="view.articles.length === 0">
+      <div class="notfound">
+        <div class="img">
+          <img src="assets/svg/text.svg" alt="">
+        </div>
+        <div class="text">
+          Nenhuma anotação encontrada <br>
+          Clique no botão abaixo para criar sua primeira
+        </div>
+        <ion-button color="primary" (click)="create()">
+          Criar anotação
+        </ion-button>
+      </div>
+    </ng-container>
 
   </div>
 

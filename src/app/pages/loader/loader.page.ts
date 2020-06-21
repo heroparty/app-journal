@@ -16,7 +16,7 @@ export class LoaderPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    timer(3000).subscribe(() => this.check());
+    timer(5000).subscribe(() => this.check());
   }
 
   check() {
