@@ -40,7 +40,7 @@ export class ViewDialogPage {
       buttons: [
         { text: 'Cancelar', handler: () => { } },
         {
-          text: 'Sair',
+          text: 'Remover',
           handler: () => {
             const article = this.article;
             const id = article.id;

@@ -10,14 +10,18 @@ export class ArticleService {
 
   public check(): void {
     const articles = localStorage.getItem('articles');
+    const key = localStorage.getItem('key');
     if (!articles) {
       localStorage.setItem('articles', JSON.stringify([]));
+    }
+    if (!key) {
+      localStorage.setItem('key', JSON.stringify({ current: 1 }));
     }
   }
 
   public create(article: ArticleModel): void {
+    const id = this.uniqueId();
     const articles = this.all;
-    const id = (articles.length + 1);
     articles.push({ ...article, id });
     this.save(articles);
   }
@@ -35,6 +39,15 @@ export class ArticleService {
 
   public get all(): ArticleModel[] {
     return JSON.parse(localStorage.getItem('articles'));
+  }
+
+  private uniqueId(): number {
+    const key = JSON.parse(localStorage.getItem('key'));
+    const currentId = parseInt(key.current, 10);
+    const nextId = (currentId + 1);
+    const newCurrent = JSON.stringify({ current: nextId });
+    localStorage.setItem('key', newCurrent);
+    return currentId;
   }
 
   private save(articles: ArticleModel[]): void {
