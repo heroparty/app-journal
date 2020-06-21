@@ -1,17 +1,15 @@
 {
   "name": "app-journal",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "version": "1.0.0",
+  "author": "Nathan Botelho",
+  "homepage": "https://github.com/heroparty/app-journal",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "ng test"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/common": "~9.1.6",
     "@angular/core": "~9.1.6",

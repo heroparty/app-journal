@@ -20,15 +20,21 @@ const routes: Routes = [
     loadChildren: () => import('./pages/list/list.module').then(m => m.ListPageModule)
   },
   {
-    path: 'view',
-    loadChildren: () => import('./pages/view/view.module').then(m => m.ViewPageModule)
-  }
+    path: 'create',
+    loadChildren: () => import('./pages/create/create.module').then(m => m.CreatePageModule)
+  },
+  // {
+  //   path: 'view',
+  //   loadChildren: () => import('./pages/view/view.module').then(m => m.ViewPageModule)
+  // },
+  // {
+  //   path: 'edit/:id',
+  //   loadChildren: () => import('./pages/view/view.module').then(m => m.ViewPageModule)
+  // },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

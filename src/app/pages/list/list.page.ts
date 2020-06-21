@@ -2,20 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import { UserService } from 'src/app/services/user.service';
-import { ArticleModel } from 'src/app/models/article.model';
-import { UserModel } from 'src/app/models/user.model';
+import { ViewModel } from 'src/app/models/view.model';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.page.html',
   styleUrls: ['./list.page.scss'],
 })
-export class ListPage implements OnInit {
+export class ListPage {
 
-  view: {
-    articles: ArticleModel[],
-    user: UserModel,
-  };
+  view: ViewModel = { articles: [], user: { name: '' } };
 
   constructor(
     private router: Router,
@@ -23,15 +19,20 @@ export class ListPage implements OnInit {
     private articles: ArticleService,
   ) { }
 
-  ngOnInit() {
+  ionViewDidEnter() {
+    this.load();
+  }
 
+  load() {
     this.articles.check();
-
     this.view = {
       articles: this.articles.all,
       user: this.user.selected,
     };
+  }
 
+  create() {
+    this.router.navigateByUrl('/create');
   }
 
 }

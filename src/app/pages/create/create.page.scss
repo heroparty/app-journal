@@ -1,0 +1,40 @@
+.content {
+    display       : flex;
+    flex-direction: column;
+    padding       : 20px 10px 0 10px;
+
+    .header {
+        box-sizing: border-box;
+        padding: 20px 0 10px 10px;
+        width: 100%;
+
+        img {
+            margin: 0 auto;
+            width : 100px;
+        }
+    }
+
+    .input {
+        box-shadow   : 0 10px 55px -15px #bbbbbb;
+        margin       : 10px 0;
+        overflow     : hidden;
+        border-radius: 15px;
+
+        ion-item {
+            --highlight-color-valid  : transparent;
+            --highlight-color-invalid: transparent;
+            --highlight-color-focused: transparent;
+        }
+    }
+
+    .buttons {
+        width          : 100%;
+        display        : flex;
+        justify-content: flex-end;
+        align-items    : center;
+
+        &>*:not(:last-child) {
+            margin-right: 5px;
+        }
+    }
+}
