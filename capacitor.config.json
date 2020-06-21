@@ -1,5 +1,5 @@
 {
-  "appId": "com.unisul.journaling-my-journey",
+  "appId": "com.unisul.journaling.my.journey",
   "appName": "Journaling my journey",
   "bundledWebRuntime": false,
   "npmClient": "npm",
@@ -11,8 +11,8 @@
   },
   "cordova": {},
   "android": {
-    "overrideUserAgent": "jmj-custom-agent",
-    "appendUserAgent": "jmj-custom-append",
+    "overrideUserAgent": "jmjcustomagent",
+    "appendUserAgent": "jmjcustomappend",
     "backgroundColor": "#0B88DB",
     "allowMixedContent": true,
     "captureInput": true,
